@@ -1,0 +1,16 @@
+{
+  "name": "react-essential-ch02",
+  "version": "1.0.0",
+  "description": "React Essential Ch02",
+  "main": "index.js",
+  "scripts": {
+    "start": "httpster -d ./dist -p 3001"
+  },
+  "author": "mogikanen9",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
