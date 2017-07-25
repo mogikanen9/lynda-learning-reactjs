@@ -7,7 +7,7 @@ render(
         color: 'white',
         fontFamily: 'Verdana'
         }}>
-        Hello World
+        Hey World
     </h1>,
     document.getElementById('react-container') 
 )

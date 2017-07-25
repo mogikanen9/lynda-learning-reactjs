@@ -4,13 +4,16 @@
   "description": "React Essential Ch02",
   "main": "index.js",
   "scripts": {
-    "start": "httpster -d ./dist -p 3001"
+    "start": "./node_modules/.bin/webpack-dev-server"
   },
   "author": "mogikanen9",
   "license": "MIT",
   "devDependencies": {
+    "babel-loader": "^7.1.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.6.1"
   }
 }
