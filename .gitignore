@@ -1,4 +1,5 @@
 
-Ch02/02_01/dist/bundle.js
-Ch02/02_01/dist/assets/bundle.js
+node_modules/
+dist/bundle.js
+dist/assets/bundle.js
 *.log
