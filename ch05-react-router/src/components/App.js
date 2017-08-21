@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { SkiDayCount } from './SkiDayCount'
 import { SkiDayList } from './SkiDayList'
 import { AddDayForm } from './AddDayForm'
+import { Menu } from './Menu'
 
 export class App extends Component{
 
@@ -40,6 +41,7 @@ export class App extends Component{
         render(){
             return (
                 <div className="app">
+                    <Menu />
                     {
                         (this.props.location.pathname === "/") ?
                             <SkiDayCount total={this.countDays()}
@@ -51,7 +53,9 @@ export class App extends Component{
                                         )}  /> :
                         (this.props.location.pathname === "/add-day")?
                             <AddDayForm /> :
-                        <SkiDayList days={this.state.allSkiDays}/>
+                        (this.props.location.pathname === "/list-days")?
+                        <SkiDayList days={this.state.allSkiDays}/>:
+                        <div/>
                     }
                    
                 </div>
