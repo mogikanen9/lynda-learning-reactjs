@@ -3,6 +3,7 @@ import { SkiDayCount } from './SkiDayCount'
 import { SkiDayList } from './SkiDayList'
 import { AddDayForm } from './AddDayForm'
 import { Menu } from './Menu'
+import { Whoops404} from './Whoops404'
 
 export class App extends Component{
 
@@ -30,6 +31,9 @@ export class App extends Component{
                                         }
                                     ]
             }
+
+            //this.dayTypeFilter = props.match.params.filter
+            this.dayTypeFilter = 'backcountry'
         }
 
        countDays(filter) {
@@ -53,9 +57,10 @@ export class App extends Component{
                                         )}  /> :
                         (this.props.location.pathname === "/add-day")?
                             <AddDayForm /> :
-                        (this.props.location.pathname === "/list-days")?
-                        <SkiDayList days={this.state.allSkiDays}/>:
-                        <div/>
+                        //(this.props.location.pathname === "/list-days")?
+                        <SkiDayList days={this.state.allSkiDays} filter={this.dayTypeFilter}/>
+                        //:
+                        //<Whoops404 />
                     }
                    
                 </div>
