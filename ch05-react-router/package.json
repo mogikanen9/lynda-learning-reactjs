@@ -1,5 +1,5 @@
 {
-  "name": "ch04-props-and-state",
+  "name": "ch05-react-router",
   "version": "1.0.0",
   "description": "React Essential Ch03",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-icons": "^2.2.5"
+    "react-icons": "^2.2.5",
+    "react-router": "^4.1.2"
   }
 }

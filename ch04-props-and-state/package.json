@@ -1,7 +1,7 @@
 {
   "name": "ch04-props-and-state",
   "version": "1.0.0",
-  "description": "React Essential Ch03",
+  "description": "React Essential Ch04",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server"
