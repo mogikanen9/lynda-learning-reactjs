@@ -3,3 +3,4 @@ node_modules/
 */dist/bundle.js
 */dist/assets/bundle.js
 *.log
+ch05-router-demo-app/dist/assets/bundle.min.js
