@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom'
 
 export const SkiDayList = ({days,filter}) => {
 
-   const filteredDays = (!filter || 
+    console.log('SkiDayList.filter->'+filter)
+
+    const filteredDays = (!filter || 
   		!filter.match(/powder|backcountry/))?
   		days:
   		days.filter(day => day[filter])  

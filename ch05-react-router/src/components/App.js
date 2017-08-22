@@ -11,7 +11,8 @@ export class App extends Component{
         constructor(props){
             
             super(props)
-           console.log(props)
+            console.log('App.props->'+props)
+
             this.state = {
                     allSkiDays: [
                                         {
@@ -32,12 +33,9 @@ export class App extends Component{
                                             powder: false,
                                             backcountry: false
                                         }
-                                    ]
+                                    ]              
             }
 
-          
-            //this.dayTypeFilter = 'backcountry'
-            this.dayTypeFilter = props.match.params.theFilter
         }
 
        countDays(filter) {
@@ -62,7 +60,7 @@ export class App extends Component{
                         (this.props.location.pathname === "/add-day")?
                             <AddDayForm /> :
                         //(this.props.location.pathname === "/list-days")?
-                        <SkiDayList days={this.state.allSkiDays} filter={this.dayTypeFilter}/>
+                        <SkiDayList days={this.state.allSkiDays} filter={this.props.match.params.theFilter}/>
                         //:
                         //<Whoops404 />
                     }

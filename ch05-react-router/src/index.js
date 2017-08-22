@@ -15,7 +15,7 @@ render(
             <Route exact path = "/" component = { App } />
             <Route path = '/list-days/:theFilter' component = { App } />
             <Route path = '/list-days' component = { App } />
-            <Route path = "/add-day" component = { AddDayForm }/>
+            <Route path = "/add-day" component = { App }/>
             <Route component = { Whoops404 }/>
         </Switch>
     </Router>,
