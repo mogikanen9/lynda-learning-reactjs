@@ -12,10 +12,10 @@ render(
     //<App />,
     <Router>
         <Switch>
-            <Route path = "/" component = { App } />
-            <Route path = "list-days" component = { App } />
-            <Route path = "list-days/:filter" component = { App } />
-            <Route path = "add-day" component = { AddDayForm }/>
+            <Route exact path = "/" component = { App } />
+            <Route path = '/list-days/:theFilter' component = { App } />
+            <Route path = '/list-days' component = { App } />
+            <Route path = "/add-day" component = { AddDayForm }/>
             <Route component = { Whoops404 }/>
         </Switch>
     </Router>,

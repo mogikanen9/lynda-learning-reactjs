@@ -5,10 +5,13 @@ import { AddDayForm } from './AddDayForm'
 import { Menu } from './Menu'
 import { Whoops404} from './Whoops404'
 
+
 export class App extends Component{
 
         constructor(props){
+            
             super(props)
+           console.log(props)
             this.state = {
                     allSkiDays: [
                                         {
@@ -32,8 +35,9 @@ export class App extends Component{
                                     ]
             }
 
-            //this.dayTypeFilter = props.match.params.filter
-            this.dayTypeFilter = 'backcountry'
+          
+            //this.dayTypeFilter = 'backcountry'
+            this.dayTypeFilter = props.match.params.theFilter
         }
 
        countDays(filter) {
