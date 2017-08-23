@@ -1,12 +1,15 @@
 import React from 'react'
-import { Router, Route, hashHistory } from 'react-router'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/ui/Home'
 import  { Whoops404  } from './components'
+import { About } from './components/ui/About'
 
 const routes = (
-    <Router history={hashHistory}>
-        <Route path="/" component={Home} />
-        <Route path="*" component={Whoops404} />
+    <Router>
+        <Switch>
+            <Route path="/" component={Home} />
+            <Route path="*" component={Whoops404} />
+        </Switch>    
     </Router>
 )
 

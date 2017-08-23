@@ -3,16 +3,16 @@ var webpack = require("webpack");
 const path = require('path');
 
 module.exports = {
-    entry: "./src/index.js",
+   entry: "./src/index.js",
    output: {
 		path: path.resolve(__dirname, 'dist/assets'),
-		filename: "bundle.js",
+		filename: "bundle.min.js",
 		publicPath: "assets"
 	},
     devServer: {
         inline: true,
         contentBase: './dist',
-        port: 3000
+        port: 3001
     },
     module: {
         loaders: [

@@ -1,8 +1,8 @@
-import MainMenu from './MainMenu'
+import { MainMenu } from './MainMenu'
 
 const Home = () =>
     <div className="home">
-        <MainMenu className="home-page-menu"/>
+        <MainMenu />
         <div id="homebox">
             <h1>Rock Appreciation Society</h1>
         </div>
