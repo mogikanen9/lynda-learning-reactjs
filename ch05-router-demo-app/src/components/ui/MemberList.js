@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 
-class MemberList extends Component {
+export class MemberList extends Component {
     render() {
         return (
             <div className="member-list">
@@ -10,5 +10,3 @@ class MemberList extends Component {
         )    
    }     
 }
-
-export default MemberList

@@ -8,9 +8,9 @@ import { MemberList } from './components/ui/MemberList'
 const routes = (
     <Router>
         <Switch>
-            <Route path="/" component={Home} />
-            <Route path="about" component={About} />
-            <Route path="members" component={MemberList} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/members" component={MemberList} />
             <Route path="*" component={Whoops404} />
         </Switch>    
     </Router>

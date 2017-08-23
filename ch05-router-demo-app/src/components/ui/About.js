@@ -1,4 +1,4 @@
-const About = () => (
+export const About = () => 
    <div className="about">
         <h1>About</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis erat non dignissim malesuada.
@@ -36,6 +36,3 @@ const About = () => (
            tristique mauris eu gravida.
        </p>
    </div>
-)
-
-export default About
