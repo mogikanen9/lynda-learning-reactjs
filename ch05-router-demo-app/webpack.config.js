@@ -1,10 +1,14 @@
+var webpack = require("webpack");
+
+const path = require('path');
+
 module.exports = {
     entry: "./src/index.js",
-    output: {
-        path: "dist/assets",
-        filename: "bundle.min.js",
-        publicPath: "/assets/"
-    },
+   output: {
+		path: path.resolve(__dirname, 'dist/assets'),
+		filename: "bundle.js",
+		publicPath: "assets"
+	},
     devServer: {
         inline: true,
         contentBase: './dist',
@@ -15,10 +19,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
-                loader: ['babel'],
-                query: {
-                    presets: ['es2015', 'react', 'stage-0']
-                }
+                loader: 'babel-loader',
+                options: {
+					presets: ['es2015', 'react', 'stage-0']
+				}
             }
         ]
     }
