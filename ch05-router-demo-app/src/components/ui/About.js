@@ -1,4 +1,8 @@
-export const About = () => 
+import { MainMenu } from './MainMenu'
+
+export const About = () =>
+<div className="page">
+    <MainMenu className="main-menu" /> 
    <div className="about">
         <h1>About</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis erat non dignissim malesuada.
@@ -36,3 +40,4 @@ export const About = () =>
            tristique mauris eu gravida.
        </p>
    </div>
+</div>
