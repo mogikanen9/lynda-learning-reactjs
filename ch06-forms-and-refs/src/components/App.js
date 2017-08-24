@@ -59,10 +59,7 @@ export class App extends Component{
                                         )}  /> :
                         (this.props.location.pathname === "/add-day")?
                             <AddDayForm /> :
-                        //(this.props.location.pathname === "/list-days")?
                         <SkiDayList days={this.state.allSkiDays} filter={this.props.match.params.theFilter}/>
-                        //:
-                        //<Whoops404 />
                     }
                    
                 </div>

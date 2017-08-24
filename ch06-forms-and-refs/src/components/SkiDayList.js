@@ -16,7 +16,6 @@ export const SkiDayList = ({days,filter}) => {
 
     return (
         <div className="ski-day-list">
-               <div>dayTypeFilter->{filter}</div>
             <table>
                 <thead>
                     <tr>
