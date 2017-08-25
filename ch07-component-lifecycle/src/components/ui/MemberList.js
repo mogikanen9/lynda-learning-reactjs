@@ -9,27 +9,20 @@ export class MemberList extends Component {
     constructor(props){
         super(props)
         this.state = {
-            members: [
-                    {
-                        name: "Edna Welch",
-                        email: "enda.welch@qwe.com",
-                        thumbnail: "https://randomuser.me/api/portraits/women/64.jpg",
-                        makeAdmin: this.makeAdmin
-                    },
-                     {
-                        name: "Anna Mona",
-                        email: "anna.mona@qwe.com",
-                        thumbnail: "https://randomuser.me/api/portraits/women/68.jpg",
-                        makeAdmin: this.makeAdmin
-                    },
-                     {
-                        name: "Eva Riku",
-                        email: "eva.riku@qwe.com",
-                        thumbnail: "https://randomuser.me/api/portraits/women/70.jpg",
-                        makeAdmin: this.makeAdmin
-                    }
-            ]
+            members: [],
+            loading: false
         }
+    }
+
+    componentDidMount(){
+        this.setState({loading: true})
+        fetch('https://api.randomuser.me/?nat=CA&results=10')
+            .then(response => response.json())
+            .then(json => json.results)
+            .then(members => this.setState({
+                members,
+                loading: false
+            }))
     }
 
     makeAdmin(){
@@ -38,12 +31,24 @@ export class MemberList extends Component {
 
     render() {
 
-        var membersList = this.state.members.map(function(memberInfo){
-                        return   <Member name={memberInfo.name}
-                            email={memberInfo.email} 
-                            makeAdmin = {memberInfo.makeAdmin} 
-                            thumbnail={memberInfo.thumbnail} key={memberInfo.email}/>
-                      })
+         {(this.state.loading) ?
+                    <span>loading...</span> :
+                    <span>{this.state.members.length} members</span>
+                }
+
+
+        let membersList = <span>Currently 0 Members</span>
+        
+        if(this.state.members.length>0){
+            membersList = this.state.members.map(function(memberInfo){
+                            return   <Member name={memberInfo.name.first+' '+memberInfo.name.last}
+                                email={memberInfo.email} 
+                                makeAdmin = {memberInfo.makeAdmin} 
+                                thumbnail={memberInfo.picture.thumbnail} 
+                                key={memberInfo.email}/>
+                        })
+        }
+     
 
         return (
             <div className="page">
