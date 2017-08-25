@@ -10,7 +10,7 @@ export class Member extends Component{
 
     render(){
         return (
-            <div className="memberInfo">
+            <div className="memberInfo" >
                 <h1>{this.props.name} <FaShiled /></h1>
                 <div>
                     <img src={this.props.thumbnail}></img>
@@ -28,7 +28,7 @@ export class Member extends Component{
 
 Member.defaultProps = {
     name: 'Sarah Conor',
-    thumbnail: '',
+    thumbnail: 'https://randomuser.me/api/portraits/women/63.jpg',
     email: 'sarah.conor@gmail.com',
     makeAdmin: function(){
         alert('kuku');
