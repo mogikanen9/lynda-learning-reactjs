@@ -2,20 +2,31 @@ import { Component } from 'react'
 import { PropTypes } from 'prop-types'
 
 export class AddDayForm extends Component{
-    
+
     constructor(props){
         super(props)
+        console.log('onNewDay->'+props.onNewDay)
         this.submit = this.submit.bind(this)
     }
 
     submit(event){
-        
+
         event.preventDefault()
 
-        console.log('resort->',this.refs.resort.value)
-        console.log('date->',this.refs.date.value)
-        console.log('powder->',this.refs.powder.checked)
-        console.log('backcountry->',this.refs.backcountry.checked)
+        var newDay = ({
+            resort: this.refs.resort.value,
+            date: this.refs.date.value,
+            powder: this.refs.powder.checked,
+            backcountry: this.refs.backcountry.checked
+        })
+
+        console.log('newDay->',newDay)
+        this.props.onNewDay(newDay)
+
+        this.refs.resort.value = ''
+        this.refs.date.value = ''
+        this.refs.powder.checked = false
+        this.refs.backcountry.checked = false
     }
     
     render(){
