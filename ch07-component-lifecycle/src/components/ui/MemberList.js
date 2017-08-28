@@ -10,7 +10,8 @@ export class MemberList extends Component {
         super(props)
         this.state = {
             members: [],
-            loading: false
+            loading: false,
+            admins: []
         }
     }
 
@@ -25,10 +26,6 @@ export class MemberList extends Component {
             }))
     }
 
-    makeAdmin(){
-        alert('It is amdin')
-    }
-
     render() {
 
          {(this.state.loading) ?
@@ -41,12 +38,13 @@ export class MemberList extends Component {
         
         if(this.state.members.length>0){
             membersList = this.state.members.map(function(memberInfo){
+                           
                             return   <Member name={memberInfo.name.first+' '+memberInfo.name.last}
-                                email={memberInfo.email} 
-                                makeAdmin = {memberInfo.makeAdmin} 
+                                email={memberInfo.email}
+                                admins={this.state.admins}
                                 thumbnail={memberInfo.picture.thumbnail} 
                                 key={memberInfo.email}/>
-                        })
+                        },this)
         }
      
 
